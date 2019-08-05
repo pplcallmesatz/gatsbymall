@@ -4,6 +4,9 @@
   "description": "A simplified bare-bones starter for Gatsby",
   "version": "0.1.0",
   "license": "MIT",
+  "scripts": {
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+  },
   "dependencies": {
     "bootstrap": "^4.3.1",
     "gatsby": "^2.13.39",
