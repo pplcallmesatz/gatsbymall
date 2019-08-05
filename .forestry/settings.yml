@@ -9,16 +9,16 @@ sections:
   label: Blog
   create: all
   match: "**/*"
-  new_doc_ext: ".md"
+  new_doc_ext: md
 - type: directory
   path: src/pages
   label: pages
   create: all
   match: "**/*"
   exclude: "/blog/**/*"
-  new_doc_ext: ".md"
-upload_dir: uploads
-public_path: "/uploads"
+  new_doc_ext: md
+upload_dir: src/images
+public_path: src/images
 front_matter_path: ''
 use_front_matter_path: false
 file_template: ":filename:"
