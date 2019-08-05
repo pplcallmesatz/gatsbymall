@@ -1,5 +1,5 @@
 ---
-title: Pandas and Bananas
+title: MY Blog
 date: 2017-08-21
 template: blog-post.js
 dataLoop:
