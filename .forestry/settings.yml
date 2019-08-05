@@ -25,7 +25,7 @@ file_template: ":filename:"
 instant_preview: true
 build:
   preview_command: gatsby build
-  publish_command: gatsby build
+  publish_command: gatsby build --prefix-paths
   preview_output_directory: public
   output_directory: public
   instant_preview_command: npm run forestry:preview
