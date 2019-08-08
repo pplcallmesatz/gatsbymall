@@ -11,7 +11,7 @@ sections:
   match: "**/*"
   new_doc_ext: md
 - type: directory
-  path: src/contents
+  path: contents/pages
   label: pages
   create: all
   match: "**/*"
