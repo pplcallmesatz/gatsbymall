@@ -6,22 +6,35 @@
 
 module.exports = {
   /* Your site config here */
-    pathPrefix: `/gatsbymallow-public`,
     plugins: [
         `gatsby-plugin-sass`,
-        `gatsby-transformer-remark`,
-    {
+        'gatsby-transformer-sharp',
+        'gatsby-plugin-sharp',
+        {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `src`,
-                path: `${__dirname}/src/`,
+                path: `${__dirname}/contents/pages/`,
             },
         },
         {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `images`,
-                path: `${__dirname}/src/assets/`,
+                path: `${__dirname}/contents/images/`,
+            },
+        },
+        {
+            resolve: 'gatsby-transformer-remark',
+            options: {
+                plugins: [
+                    {
+                        resolve: 'gatsby-remark-images',
+                        options: {
+                            maxWidth: 970,
+                        },
+                    },
+                ],
             },
         },
         // {
