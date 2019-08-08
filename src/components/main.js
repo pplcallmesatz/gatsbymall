@@ -1,21 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {
-    Collapse,
-    Navbar,
-    NavbarToggler,
-    NavbarBrand,
-    Nav,
-    NavItem,
-    NavDropdown,
-    Form,
-    FormControl,
-    Button,
-    NavLink,
-    UncontrolledDropdown,
-    DropdownToggle,
-    DropdownMenu,
-    DropdownItem } from 'react-bootstrap';
+import Navbar from './navbar';
+
 import { Link } from "gatsby"
 const ListLink = props => (
 
@@ -24,37 +10,13 @@ const ListLink = props => (
 )
 
 
-export default class Main extends React.Component{
-    constructor(props) {
-        super(props);
-
-        this.toggle = this.toggle.bind(this);
-        this.state = {
-            isOpen: false
-        };
-    }
-    toggle() {
-        this.setState({
-            isOpen: !this.state.isOpen
-        });
-    }
+class Main extends React.Component{
     render() {
         return (
             <div>
             {/* Navigation Bar */}
             <header>
-            <Navbar bg="light" expand="lg">
-            {/* <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand> */}
-            <Link className={"navbar-brand"}>NAvBrand</Link>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-            <ListLink className={"nav-link"} to="/">Home</ListLink>
-            <ListLink className={"nav-link"}  to="/about/">About</ListLink>
-            <ListLink className={"nav-link"}  to="/contact/">Contact</ListLink>
-            </Nav>
-            </Navbar.Collapse>
-            </Navbar>
+                <Navbar />
             </header>
         {/* End: Navigation Bar */}
         {/* Body Content */}
@@ -73,3 +35,4 @@ export default class Main extends React.Component{
     );
     }
 }
+export default Main

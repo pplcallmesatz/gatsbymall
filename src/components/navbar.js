@@ -1,23 +1,50 @@
-import React from "react"
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {
+    Navbar,
+    Nav,
+   } from 'react-bootstrap';
 import { Link } from "gatsby"
 const ListLink = props => (
-<li style={{ display: `inline-block`, marginRight: `1rem` }}>
-<Link to={props.to}>{props.children}</Link>
-    </li>
+
+    <Link activeClassName="active" className={props.className} to={props.to}>{props.children}</Link>
+
 )
 
-export default ({ children }) => (
-<div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
-<header style={{ marginBottom: `1.5rem` }}>
-<Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
-<h3 style={{ display: `inline` }}>MySweetSite</h3>
-</Link>
-<ul style={{ listStyle: `none`, float: `right` }}>
-<ListLink to="/">Home</ListLink>
-    <ListLink to="/about/">About</ListLink>
-    <ListLink to="/contact/">Contact</ListLink>
-    </ul>
-    </header>
-{children}
-</div>
-)
+
+export default class Main extends React.Component{
+    constructor(props) {
+        super(props);
+
+        this.toggle = this.toggle.bind(this);
+        this.state = {
+            isOpen: false
+        };
+    }
+    toggle() {
+        this.setState({
+            isOpen: !this.state.isOpen
+        });
+    }
+    render() {
+        return (
+                    <Navbar bg="light" expand="lg">
+                        <div className={"container"}>
+                            {/* <Navbar.Brand href="/">React-Bootstrap</Navbar.Brand> */}
+                            <Link to="/" className={"navbar-brand"}>NAvBrand</Link>
+                            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                            <Navbar.Collapse id="basic-navbar-nav">
+                                <Nav className="mr-auto">
+                                    <ListLink className={"nav-link"} to="/">Home</ListLink>
+                                    <ListLink className={"nav-link"}  to="/services/">Services</ListLink>
+                                    <ListLink className={"nav-link"}  to="/portfolio/">Portfolio</ListLink>
+                                    <ListLink className={"nav-link"}  to="/technologies/">Technologies</ListLink>
+                                    <ListLink className={"nav-link"}  to="/career/">Career</ListLink>
+                                    <ListLink className={"nav-link nav-btn"}  to="/career/">Contact</ListLink>
+                                </Nav>
+                            </Navbar.Collapse>
+                        </div>
+                    </Navbar>
+        );
+    }
+}
