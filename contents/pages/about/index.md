@@ -9,7 +9,6 @@ dataMD:
   progress: boddy
 - sample: this is sample data two
   progress: boddyd
-- 
 
 ---
 Pandas are really sweet.

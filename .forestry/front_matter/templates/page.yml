@@ -27,3 +27,5 @@ fields:
   - type: text
     name: progress
     label: progress
+pages:
+- contents/pages/about/index.md
