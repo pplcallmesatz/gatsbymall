@@ -1,0 +1,29 @@
+---
+label: Page
+hide_body: false
+fields:
+- type: text
+  name: title
+  label: title
+- type: datetime
+  name: date
+  label: date
+- type: text
+  name: template
+  label: template
+- type: file
+  name: images
+  label: images
+- type: boolean
+  name: imageCheck
+  label: imageCheck
+- type: field_group_list
+  name: dataMD
+  label: dataMD
+  fields:
+  - type: text
+    name: sample
+    label: sample
+  - type: text
+    name: progress
+    label: progress
